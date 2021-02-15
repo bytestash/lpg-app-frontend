@@ -1,4 +1,4 @@
-import { CREATE_PRODUCT } from "../constants/action-types";
+import {act} from "@testing-library/react";
 
 const initialState = {
     productCollection: {
@@ -12,17 +12,17 @@ const initialState = {
             number : 1,
         }
     },
+    categoryCollection: {
+        _embedded: {
+            categories: []
+        }
+    },
     sortColumn: "id",
-    sortDirection: "asc"
+    sortDirection: "asc",
+    productCreatedSuccessFully: false
 };
 
 function rootReducer(state = initialState, action) {
-    if (action.type === CREATE_PRODUCT) {
-        return Object.assign({}, state, {
-            productCollection: state.productCollection.concat(action.payload)
-        });
-    }
-
     if (action.type === "PRODUCTS_LOADED") {
         return Object.assign({}, state, {
             productCollection: action.payload,
@@ -31,8 +31,20 @@ function rootReducer(state = initialState, action) {
         });
     }
 
+    if (action.type === "CATEGORIES_LOADED") {
+        return Object.assign({}, state, {
+            categoryCollection: action.payload
+        });
+    }
+
     if (action.type === "PRODUCT_DELETED_SUCCESSFULLY") {
         // Todo: Display a nice message
+    }
+
+    if (action.type === "PRODUCT_CREATED_SUCCESSFULLY") {
+        return Object.assign({}, state, {
+            productCreatedSuccessFully: true
+        });
     }
 
     return state;
