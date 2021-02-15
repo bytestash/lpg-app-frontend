@@ -1,9 +1,16 @@
 To run:
-pre-requisets. Shell and docker and a running lpg-app-backend container. See:
-[https://github.com/bytestash/lpg-app-backend/blob/develop/README.md](https://github.com/bytestash/lpg-app-backend/blob/develop/README.md)
+pre-requisites. `shell`, `docker`.
 
 To start run:
 ### `sh start.sh`
 
+Run backend see:
+[https://github.com/bytestash/lpg-app-backend/blob/develop/README.md](https://github.com/bytestash/lpg-app-backend/blob/develop/README.md)
+
+go to 
+### `http://localhost:3000`
+
 To stop run:
 ### `sh stop.sh`
+
+
