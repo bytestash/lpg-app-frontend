@@ -4,6 +4,6 @@ export function createProduct(payload) {
     return { type: CREATE_PRODUCT, payload };
 }
 
-export function getProductsFromBackend() {
-    return { type: PRODUCTS_REQUESTED };
+export function getProductsFromBackend(sortColumn, sortDirection, pageNumber, pageSize) {
+    return { type: PRODUCTS_REQUESTED, sortColumn, sortDirection, pageNumber, pageSize };
 }

@@ -5,7 +5,6 @@ import ProductForm from "./ProductForm";
 const App = () => (
     <div>
         <div>
-            <h2>Products</h2>
             <ProductList />
         </div>
         <div>

@@ -1,11 +1,19 @@
-import { CREATE_PRODUCT, PRODUCTS_REQUESTED } from "../constants/action-types";
+import { CREATE_PRODUCT } from "../constants/action-types";
 
 const initialState = {
     productCollection: {
         _embedded: {
             products: []
+        },
+        page : {
+            size : 5,
+            totalElements : 0,
+            totalPages : 0,
+            number : 1,
         }
-    }
+    },
+    sortColumn: "name",
+    sortDirection: "asc"
 };
 
 function rootReducer(state = initialState, action) {
@@ -17,7 +25,9 @@ function rootReducer(state = initialState, action) {
 
     if (action.type === "PRODUCTS_LOADED") {
         return Object.assign({}, state, {
-            productCollection: action.payload
+            productCollection: action.payload,
+            sortColumn: action.sortColumn,
+            sortDirection: action.sortDirection
         });
     }
 
