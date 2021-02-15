@@ -5,6 +5,11 @@ import DataTable from 'react-data-table-component';
 
 const columns = [
     {
+        name: 'Id',
+        selector: 'id',
+        sortable: true,
+    },
+    {
         name: 'Name',
         selector: 'name',
         sortable: true,
@@ -15,20 +20,14 @@ const columns = [
         sortable: true,
     },
     {
-        name: 'Date created',
-        selector: 'creationDate',
-        sortable: true,
-        right: true,
-    },
-    {
-        name: 'Date modified',
-        selector: 'updateDate',
-        sortable: true,
-        right: true,
-    },
-    {
         name: 'Last purchase date',
         selector: 'lastPurchasedDate',
+        sortable: true,
+        right: true,
+    },
+    {
+        name: 'Category',
+        selector: 'category.name',
         sortable: true,
         right: true,
     }

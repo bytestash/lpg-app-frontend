@@ -12,7 +12,7 @@ const initialState = {
             number : 1,
         }
     },
-    sortColumn: "name",
+    sortColumn: "id",
     sortDirection: "asc"
 };
 
