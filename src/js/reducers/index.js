@@ -31,6 +31,10 @@ function rootReducer(state = initialState, action) {
         });
     }
 
+    if (action.type === "PRODUCT_DELETED_SUCCESSFULLY") {
+        // Todo: Display a nice message
+    }
+
     return state;
 }
 
